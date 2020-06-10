@@ -78,7 +78,7 @@ void CMemoryManager::ReadLog() {
             TMemoryMessage *message = GetMemoryMessage(header, read_offset);
             //printf("<%s> read_offset<%d> header<%x> <%x>\n", __FUNCTION__, read_offset, header, message);
             if (message->header.type == 0) {
-                printf("line<%d> <%s>\n", line++, message->field);
+                printf("line<%d> %s\n", line++, message->field);
             }
             read_offset += (message->header.length + sizeof (TMemoryMessage));
         }
